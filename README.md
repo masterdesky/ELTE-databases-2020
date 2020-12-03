@@ -1,2 +1,1 @@
-# ELTE_Databases_MSc_2021
-Repository for my coursework for the "Data Models and Databases in Science" (dsmodelsf17vm) course (Tutor: István Csabai, PhD) @ ELTE
+# Data Models and Databases in Science 2020-2021/1 @ ELTE
