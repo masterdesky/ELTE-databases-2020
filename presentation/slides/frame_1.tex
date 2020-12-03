@@ -1,0 +1,21 @@
+%----------------------------------------------------------------------------------------
+%	SLIDE 1.
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{The necessity to parallelize}
+
+\begin{itemize}
+	\item<1-> Algorithms can easily exceed any reasonable amount of runtime.
+	\begin{itemize}
+		\item<1-> Example from the slides: \textit{"Algorithms more complex than $\mathcal{O} \left( n \log \left( n \right) \right)$ are hopeless to trace."}
+		\item<2-> Solution: parallelization of subtasks!
+	\end{itemize}
+	\item<3-> Problems
+	\begin{itemize}
+		\item<3-> There are task that can be solved only sequentially (eg. reading from disk).
+		\item<3-> There are task which requires a lot of effort and work to parallelize.
+	\end{itemize}
+	\item<4-> We expect - or at least hope - that parallelization shortens runtime significantly.
+\end{itemize}
+
+\end{frame}

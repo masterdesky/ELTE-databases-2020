@@ -1,0 +1,25 @@
+%----------------------------------------------------------------------------------------
+%	SLIDE 2.
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Amdahl's law}
+
+\begin{itemize}
+	\item<1-> Quantifies the theoretical magnitude of speedup due to parallelization.
+	\item<2-> We can split a whole arbitrary algorithm (denoting with $1$) into to parts:
+	\begin{equation} \label{eq:1}
+		1 = S + P,
+	\end{equation}
+	where $S$ denotes the fraction of runtime of the sequentially and $P$ the parallel solved part.
+	\item<3-> Amdahl's law now can be formulated as the following:
+	\begin{equation} \label{eq:2}
+		Q_{\text{speed up}} \left( N \right)
+		=
+		\frac{1}{S + \frac{P}{N}}
+		=
+		\frac{1}{\left( 1 - P \right) + \frac{P}{N}},
+	\end{equation}
+	Where $N$ is the number of parallel threads, and the runtime $S$ was expressed in the denominator using equation \eqref{eq:1}.
+\end{itemize}
+
+\end{frame}
