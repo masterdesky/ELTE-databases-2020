@@ -2,11 +2,18 @@
 %	SLIDE 6.
 %----------------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Sample outputs of method II. - Beam size effect}
+\frametitle{Amdahl's number}
 
-\begin{figure}
-	\includegraphics[width=\textwidth]{./images/CMB_sim_beam_concat.png}
-	\captionof{figure}{Effect of a beam with $\mathrm{FWHM}_\mathrm{beam} = 10\,\mathrm{arcmin}$ on a CMB map with foregrounds objects.}
-\end{figure}
-
+\begin{itemize}
+	\item<1-> Objectively quantifies how fast the procession of a task is on an arbitrary machine:
+	\begin{block}{}
+		\begin{equation}
+			A
+			=
+			\frac{1\,\text{bit}\frac{\text{IO}}{\text{sec}}}{1\,\frac{\text{instruction}}{\text{sec}}}
+		\end{equation}
+	\end{block}	
+	\item<1-> \textit{"How many CPU instructions needed to process $1$ bit of data?"}
+	\item<2-> Of course the bigger the value of $A$ is the better.
+\end{itemize}
 \end{frame}

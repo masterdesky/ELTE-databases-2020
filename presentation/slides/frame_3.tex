@@ -5,20 +5,22 @@
 \frametitle{Amdahl's law}
 
 \begin{itemize}
-	\item<1-> Amdahl's law now can be formulated as the following:
-	\begin{equation} \label{eq:2}
-		Q_{\text{speedup}} \left( N \right)
-		=
-		\frac{1}{S + \frac{P}{N}}
-		=
-		\frac{1}{S + \frac{1 - S}{N}},
-	\end{equation}
+	\item<1-> Amdahl's law now can be formulated as the following for tasks with fixed workload:
+	\begin{block}{}	
+		\begin{equation} \label{eq:2}
+			Q_{\text{speedup}} \left( N \right)
+			=
+			\frac{1}{S + \frac{P}{N}}
+			=
+			\frac{1}{S + \frac{1 - S}{N}},
+		\end{equation}
+	\end{block}	
 	Where $N$ is the number of parallel threads, and the runtime $P$ was expressed in the denominator using equation \eqref{eq:1}.
 	\item<2-> The behaviour of the $Q$ speedup's value can be expressed as
 	\begin{equation}
 		\begin{cases}
-			Q_{\text{speedup}} = \frac{1}{S} & \text{if } N \to \infty \\
-			Q_{\text{speedup}} < \frac{1}{S} & \text{else}
+			Q_{\text{speedup}} = \frac{1}{S} & \text{if } N \to \infty, \\
+			Q_{\text{speedup}} < \frac{1}{S} & \text{else}.
 		\end{cases}
 	\end{equation}
 \end{itemize}

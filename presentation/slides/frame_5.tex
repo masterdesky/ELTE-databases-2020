@@ -2,11 +2,23 @@
 %	SLIDE 5.
 %----------------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Sample outputs of method II. - Foreground sources}
-
-\begin{figure}
-	\includegraphics[width=\textwidth]{./images/CMB_sim_foregrounds_concat.png}
-	\captionof{figure}{Randomly generated point sources (left) and the randomly generated map of the thermal component of the Sunyaev-Zeldovich effect (right).}
-\end{figure}
+\frametitle{Other forms of Amdahl's laws}
+\framesubtitle{(Embarassingly just from Wikipedia)}
+\begin{itemize}
+	\item Optimizing the sequential part of parallel programs
+	\begin{equation}
+		Q_{\text{speedup}} \left( O, N \right)
+		=
+		\frac{\frac{S}{O} + \left( 1 - S \right)}{\frac{S}{O} + \frac{1 - S}{N}},
+	\end{equation}
+	where $O$ is the speedup of the sequential runtime, so $T_{S_{\text{new}}} = T_{S_{\text{old}}} / O$.
+	\item Transforming sequential parts of parallel programs into parallelizable
+	\begin{equation}
+		Q_{\text{speedup}} \left( O', N \right)
+		=
+		\frac{1}{\frac{S}{O'} + \left( 1 - \frac{S}{O'} \right) \frac{1}{N}},
+	\end{equation}
+	where $S$ is reduced by a factor of $O'$, so $S_{\text{new}} = S_{\text{old}} / O'$.
+\end{itemize}
 
 \end{frame}
