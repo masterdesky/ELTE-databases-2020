@@ -2,11 +2,11 @@
 %	SLIDE 4.
 %----------------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Sample outputs of method II. - Pure maps}
+\frametitle{Amdahl's law}
 
 \begin{figure}
-	\includegraphics[width=\textwidth]{./images/CMB_sim_pure_true_concat.png}
-	\captionof{figure}{Randomly generated intensity maps of the pure CMB temperature anisotropy with two different random seeds.}
+	\includegraphics[width=0.9\textwidth]{./images/amdahls_law.png}
+	\captionof{figure}{Visualization of the speedup with increasing number of parallel processors for different values of $S$. The figure shows that when the sequential part of the task is just the small portion of the whole algorithm, then the speedup is the highest. It can also seen, that the limit for the speedup is $\lim_{N \to \infty} = \frac{1}{S}$}
 \end{figure}
 
 \end{frame}
