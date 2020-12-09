@@ -1,0 +1,62 @@
+Hello everyone, my name is Balázs and I would like to speak about Amdahl's Law and about why and how we should parallelize our computations and algorithms. Let's start with the latter one, the necessity of parallelization.
+
+[NEW SLIDE]
+
+Probably everyone here at least once tried to run a code during his or her studies or research or anything, that just didn't wanted to finish. Or maybe it finished, but only just after waiting on it for a really long time.
+You probably also know that it's actually very common in real life computations in literally every field of computer science. As it was stated on the original lecture slides, "Algorithms more complex, than O(n log(n)) complexity are untraceble". And that's not feasible for us, humans, and the reasons are pretty obvious I think. We have fairly limited time on this planet and we really hate to wait for things to happen. Also electricity is not free, neither the rent fee of computation time on big clusters. And the reasons are virtually  endless... We have to run algorithms as fast and as efficiently as possible in most of the real-life usecases.
+
+There are a lot of methods and ways of optimization, but I'm going speaking about parallelization in this presentation. So parallelization is the act of running recurrent and smaller computational tasks of an algorithm in parallel during execution time on multiple processor at the same time.
+
+[NEW SLIDE]
+
+Some problems can and do arise when we're trying to do this to a program. There are tasks which are inherently not parallelizable. We have to execute them on a single processor in every circumstances. What are these tasks? For example reading data from a disk as I also mentioned this on this slide. This task needs to be solved sequentially. Also there are tasks which are takes a lot of effort to parallelize, but that's another story... whether you should even consider take the time and effort to make your algorithm parallel or just run the program naively because even that's faster... okay whatever.
+
+[NEW SLIDE]
+
+But at the end of the day we expect from parallelization, that it improves (shortens) the runtime by a lot.
+
+That's the point where Amdahl's law comes in.
+
+[NEW SLIDE]
+
+This "law" (with imaginary quotation marks around the word "law") intends to quantify the speedup of our algorithm thanks to parallelization with a very easy formula.
+
+[NEW SLIDE]
+
+Let's first define some really trivial notation. Denote the total, original, naive execution time of an algorithm with uppercase T. That's the execution time, when the task solved completely sequentially. A fraction of this algorithm will be however parallelizable (if that's possible in the first case. Let us consider a case when it is.) Denote this parallelizable fraction of the total as P and the other, non-parallelizable part as S, as both S and P is a number between 0 and 1 and the sum of them, S + P = 1.
+
+[NEW SLIDE]
+
+If we consider the parallel part as an infinitely optimalizable fraction of the algorithm we can already see, that the sequantial part will impose the real limit on speedup here. Let's see the actual Amdahl's law to understand it correctly.
+
+[NEW SLIDE]
+
+So the speedup Q simply means, how many times the algorithm as a whole runs faster if parallelization is utilized. If for example Q=2, then the total runtime is half of the original. This speedup depends on two things: The proportion of S and P, and on the number of computational threads we run the parallel part on.
+
+[NEW SLIDE]
+
+This equation should clear up any confusion about the supposed limits of parallelization, since we can easily see, that if N, the number of processors goes to infinity, then the speedup is solely depends on the value of S, the fraction of the non-parallelizable part.
+
+[NEW SLIDE]
+
+We can plot the value of the Q speedup as a function of N for different S values. We can see on the figure, that the greater portion the sequential part of the program takes up of the whole, the less speedup can be achieved through parallelization. If S is really big it's pointless to devote any energy to it. However is S is only just a small fraction of the algorithm, parallelization is completely a game changer. If S takes up the 5% of the original runtime, we can speed up our algorithm more than by 6 times with parallelization using an ordinary 8 core CPU.
+
+[NEW SLIDE]
+
+I just want to tell a sentence or two about other forms of Amdahl's law, which can be found on Wikipedia, with their corresponding derivation and a lot of other info. So programming is not that linear as I've expressed it previously. Sequential parts can be also optimized, even completly replaced with parallelizable tasks. These changes can be also incorporated into Amdahl's law, which results us these equations for the speedup. I won't detail them more like this so let's go on.
+
+[NEW SLIDE]
+
+I would like to speak about one more thing and then that's the end of my presentation. So there is a term in the lecture slides related to this topic. Namely the "Amdahl's number". Amdahl's number intends to objectively describe or quantify, how efficiently or how well a hardware configuration handles an algorithm. Of course, if we execute some software or anything, we're limited by the quality of the hardware too, not just by the written code and the number of computational threads themselves. Amdahl's number is a measure of - seen in this current slide - measure of "how many CPU instructions needed to process 1 bit of data?".
+
+[NEW SLIDE]
+
+If we have for example faster CPUs or SSDs, which handle data in an absolutely optimal way, this number will be larger. More bits will be processed per CPU instructions.
+
+[NEW SLIDE]
+
+I've collected some typical values for Amdahl's number on this last slide, they can be found in the original lecture slides too. In the first example there is a short calculation of Amdahl's number for a system with four SSDs and a CPU with 8 cores and 2.5 GHz clock speed. We simply calculate the total read/write or IO speed of the 4 SSDs, and divide it by the number of instructions the CPU can handle with its specific clock speed and number of cores.
+
+And below you can see some typical values for different types of clusters, and an average personal computer and at the end, something that I don't recognize, but its value is higher than 1, which is very interesting.
+
+And that was all, thank you for your attention.
